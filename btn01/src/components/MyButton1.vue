@@ -1,11 +1,11 @@
 <script setup></script>
 
 <template>
-    <button class="btn btn-danger mb-1 btn-color1">我是按鈕</button>
+  <button class="btn btn-danger mb-1 btn-color1">我是按鈕</button>
 </template>
 
 <style scoped>
-.btn-color1{
+.btn-color1 {
   --bs-btn-color: #fff;
   --bs-btn-bg: #7c3aed;
   --bs-btn-border-color: #7c3aed;
