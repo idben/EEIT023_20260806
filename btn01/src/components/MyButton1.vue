@@ -3,6 +3,7 @@
 <template>
   <button class="btn btn-danger mb-1 btn-color1">
     <slot name="icon"></slot>
+    <!-- <slot name="default">預設文字</slot> 預設插槽的名字是 default -->
     <slot>預設文字</slot>
   </button>
 </template>

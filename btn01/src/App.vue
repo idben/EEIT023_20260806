@@ -5,7 +5,9 @@ import MyButton1 from './components/MyButton1.vue'
 <template>
   <div class="container py-3">
     <MyButton1>
-      註冊
+      <template #default>
+        註冊
+      </template>
       <template #icon>
         <i class="fa-solid fa-address-card"></i>
       </template>
