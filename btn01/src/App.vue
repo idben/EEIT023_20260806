@@ -4,7 +4,7 @@ import MyButton1 from './components/MyButton1.vue'
 
 <template>
   <div class="container py-3">
-    <MyButton1>
+    <MyButton1 size="sm">
       <template #default>
         註冊
       </template>
@@ -24,7 +24,7 @@ import MyButton1 from './components/MyButton1.vue'
 
     <br>
 
-    <MyButton1>
+    <MyButton1 size="lg">
       加入我的最愛
       <template v-slot:icon>
         <i class="fa-solid fa-bookmark"></i>

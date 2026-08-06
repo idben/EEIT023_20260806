@@ -1,7 +1,14 @@
-<script setup></script>
+<script setup>
+const props = defineProps({
+  size: {
+    type: String,
+    default: "md"
+  }
+})
+</script>
 
 <template>
-  <button class="btn btn-danger mb-1 btn-color1">
+  <button :class="['btn', 'btn-danger', 'mb-1', 'btn-color1', `btn-${props.size}`]">
     <slot name="icon"></slot>
     <!-- <slot name="default">預設文字</slot> 預設插槽的名字是 default -->
     <slot>預設文字</slot>
