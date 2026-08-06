@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue'
 import TodoHeader from './components/TodoHeader.vue'
 import TodoInput from './components/TodoInput.vue'
+import TodoFilter from './components/TodoFilter.vue'
 
 const todos = ref([
     { id: 1, text: '學習 Vue 3 基礎語法', completed: true },
@@ -70,14 +71,7 @@ const clearCompleted = function () {
                 <!-- 輸入區 -->
                 <TodoInput v-model="newTodo" @add="addTodo" />
                 <!-- 篩選按鈕 -->
-                <div class="d-flex gap-2 my-2">
-                    <button class="btn btn-sm rounded-pill" :class="filter == 'all' ? 'btn-primary' : 'btn-light'"
-                        @click="filter = 'all'">全部</button>
-                    <button class="btn btn-sm rounded-pill" :class="filter == 'active' ? 'btn-primary' : 'btn-light'"
-                        @click="filter = 'active'">待處理</button>
-                    <button class="btn btn-sm rounded-pill" :class="filter == 'completed' ? 'btn-primary' : 'btn-light'"
-                        @click="filter = 'completed'">已完成</button>
-                </div>
+                <TodoFilter v-model="filter" />
                 <!-- 待辦事項區 -->
                 <ul class="list-group">
                     <li v-for="todo in filteredTodos" :key="todo.id"
