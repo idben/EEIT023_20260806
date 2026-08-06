@@ -2,6 +2,7 @@
 
 <template>
   <button class="btn btn-danger mb-1 btn-color1">
+    <slot name="icon"></slot>
     <slot>預設文字</slot>
   </button>
 </template>
