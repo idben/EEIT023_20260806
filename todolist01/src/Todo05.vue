@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import TodoHeader from './components/TodoHeader.vue'
+import TodoInput from './components/TodoInput.vue'
 
 const todos = ref([
     { id: 1, text: '學習 Vue 3 基礎語法', completed: true },
@@ -67,10 +68,7 @@ const clearCompleted = function () {
             <TodoHeader :totalCount="totalCount" :completedCount="completedCount" :remainingCount="remainingCount" />
             <div class="card-body">
                 <!-- 輸入區 -->
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="新增待辦事項..." v-model="newTodo">
-                    <button class="btn btn-primary" @click="addTodo" :disabled="!newTodo">新增</button>
-                </div>
+                <TodoInput v-model="newTodo" @add="addTodo" />
                 <!-- 篩選按鈕 -->
                 <div class="d-flex gap-2 my-2">
                     <button class="btn btn-sm rounded-pill" :class="filter == 'all' ? 'btn-primary' : 'btn-light'"
