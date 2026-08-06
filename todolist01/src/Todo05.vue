@@ -3,6 +3,7 @@ import { ref, computed } from 'vue'
 import TodoHeader from './components/TodoHeader.vue'
 import TodoInput from './components/TodoInput.vue'
 import TodoFilter from './components/TodoFilter.vue'
+import TodoList from './components/TodoList.vue'
 
 const todos = ref([
     { id: 1, text: '學習 Vue 3 基礎語法', completed: true },
@@ -73,18 +74,7 @@ const clearCompleted = function () {
                 <!-- 篩選按鈕 -->
                 <TodoFilter v-model="filter" />
                 <!-- 待辦事項區 -->
-                <ul class="list-group">
-                    <li v-for="todo in filteredTodos" :key="todo.id"
-                        class="list-group-item d-flex gap-1 align-items-center">
-                        <span class="check-circle" :class="{ 'checked': todo.completed }" @click="toggleTodo(todo.id)">
-                            <i class="fa-solid fa-check"></i>
-                        </span>
-                        <span :class="{ 'completed-text': todo.completed }">{{ todo.text }}</span>
-                        <button class="btn btn-outline-danger btn-sm ms-auto" @click="deleteTodo(todo.id)">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
-                    </li>
-                </ul>
+                <TodoList :todos="filteredTodos" :filter="filter" @toggle="toggleTodo" @delete="deleteTodo" />
             </div>
             <div class="card-footer d-flex align-items-center">
                 <!-- 其他功能 -->
@@ -98,28 +88,5 @@ const clearCompleted = function () {
 <style scoped>
 .mw500px {
     max-width: 500px;
-}
-
-.check-circle {
-    width: 24px;
-    height: 24px;
-    border: 2px solid #ddd;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 12px;
-}
-
-.check-circle.checked {
-    background: #51cf66;
-    border-color: #51cf66;
-    color: white;
-}
-
-.completed-text {
-    text-decoration: line-through;
-    color: #aaa;
 }
 </style>
