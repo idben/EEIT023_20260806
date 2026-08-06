@@ -35,6 +35,8 @@ const total = computed(() => price.value * quantity.value)
     <div>總計: {{ totalCount }} 件</div>
     <div>已完成: {{ completedCount }} 件</div>
     <div>待處理: {{ remainingCount }} 件</div>
+    <hr>
+    <i class="fa-solid fa-bookmark fa-xs"></i>
 </template>
 
 <style scoped></style>
