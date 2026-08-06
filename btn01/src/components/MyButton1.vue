@@ -1,7 +1,9 @@
 <script setup></script>
 
 <template>
-  <button class="btn btn-danger mb-1 btn-color1">我是按鈕</button>
+  <button class="btn btn-danger mb-1 btn-color1">
+    <slot>預設文字</slot>
+  </button>
 </template>
 
 <style scoped>
